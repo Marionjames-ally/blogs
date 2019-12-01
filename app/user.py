@@ -3,10 +3,11 @@ class Quote:
     quote class to define quote Objects
     '''
 
-    def __init__(self,id,author,quote):
-         self.author = author
-         self.quote = quote
-
+    def __init__(self,id,author,quote,permalink):
+        self.id =id
+        self.author = author
+        self.quote = quote
+        self.permalink = permalink
 
 
 class Review:

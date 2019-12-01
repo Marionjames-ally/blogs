@@ -3,16 +3,21 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to my blog </title>
-        {% endif %}
+    
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    <h1> {{ message }} </h1>
+    {% block content %}
+    <h1> GENERAL QUOTES BLOG </h1>
+
+    <div class="well-lg" id="random">
+            <h2>Random Quote</h2> <br>
+            <p>{{quote.quote}}</p>
+            <p>Author: {{quote.author}}</p> 
+        </div>
+
+    {% endblock %}
 </body>
 </html>

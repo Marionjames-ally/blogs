@@ -11,10 +11,10 @@ class QuoteTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_quote = Quote(1,'mango','try me even now')
-
+        self.new_quote = Quote(1,'mango','try me even now','http://quotes.stormconsultancy.co.uk/quotes/7')
+ 
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_quote,Quote))
+        self.assertTrue(isinstance(self.new_quote,Quote,))
 
 
 if __name__ == '__main__':
