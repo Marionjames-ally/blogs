@@ -1,8 +1,6 @@
 from flask import abort, redirect, render_template, request, url_for,abort,flash
 from flask_login import current_user, login_required, login_user, logout_user
-
 from app.request import get_quote
-
 from .. import db
 from ..user import Blog, Comment, User
 from . import main
@@ -75,13 +73,6 @@ def update_blog(id):
         content = form.content.data
     return render_template('blog.html',form=form)
 
-#@main.route('/blog/<blog_id>')
-#def bloging(blog_id):
-   # blog = Blog.query.get_or_404(blog_id)
-   # return render_template('blog.html', title=blog)
-
-
-
 @main.route('/user/<uname>')
 @login_required
 def profile(uname):
@@ -113,8 +104,6 @@ def update_profile(uname):
     return render_template('profile/update.html', form=form)
 
 
-@main.route('/user/<uname>/update/pic', methods=['POST'])
-@login_required
 
 
 @main.route('/comment/new/<int:blog_id>', methods=['GET', 'POST'])

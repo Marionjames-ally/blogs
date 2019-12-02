@@ -1,17 +1,15 @@
-import urllib.request,json
+import json
+import urllib.request
+
 from .user import Quote
 
-# Getting api key
-api_key = None
-
-# Getting the movie base url
+# Getting the quote base url
 base_url = None
 
+
 def configure_request(app):
-     global base_url
-     base_url = app.config['QUOTES_URL']
-
-
+    global base_url
+    base_url = app.config['QUOTES_URL']
 
 
 def get_quote():
@@ -26,11 +24,10 @@ def get_quote():
         quote_results = None
 
         if get_quote_response:
-            id=get_quote_response.get('id')
-            author=get_quote_response.get("author")
-            quote=get_quote_response.get("quote")
-            permalink=get_quote_response.get("permalink")
-            quote_results=Quote(id,author,quote,permalink)
-
+            id = get_quote_response.get('id')
+            author = get_quote_response.get("author")
+            quote = get_quote_response.get("quote")
+            permalink = get_quote_response.get("permalink")
+            quote_results = Quote(id, author, quote, permalink)
 
         return quote_results
