@@ -1,7 +1,8 @@
 from flask_login import UserMixin, current_user
 from werkzeug.security import check_password_hash, generate_password_hash
+from . import db,login_manager
 
-from . import db, login_manager
+
 
 class Quote:
     '''
@@ -13,9 +14,7 @@ class Quote:
         self.author = author
         self.quote = quote
         self.permalink = permalink
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
