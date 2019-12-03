@@ -1,10 +1,14 @@
 from flask import abort, redirect, render_template, request, url_for,abort,flash
-from flask_login import current_user, login_required, login_user, logout_user
+from flask_login import current_user, login_required, login_user, logout_user, login_manager
+
 from app.request import get_quote
+
 from .. import db
 from ..user import Blog, Comment, User
 from . import main
 from .forms import BlogForm, CommentForm, UpdateProfile,UpForm
+
+
 
 
 @main.route('/', methods=['GET', 'POST'])
@@ -73,6 +77,7 @@ def update_blog(id):
         content = form.content.data
     return render_template('blog.html',form=form)
 
+
 @main.route('/user/<uname>')
 @login_required
 def profile(uname):
@@ -102,8 +107,6 @@ def update_profile(uname):
         return redirect(url_for('.profile', uname=user.username))
 
     return render_template('profile/update.html', form=form)
-
-
 
 
 @main.route('/comment/new/<int:blog_id>', methods=['GET', 'POST'])

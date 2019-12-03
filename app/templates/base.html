@@ -1,21 +1,147 @@
 {% extends 'bootstrap/base.html'%}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
+
         {% if title %}
         <title> {{ title }}</title>
         {% else %}
         <title> BLOGS </title>
         {% endif %}
-    </head>
-    <body>
-
 
         {% block styles%}
         {{ super() }}
         <link rel="stylesheet"type= "text/css" href="{{url_for('static',filename='css/styles.css')}}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+      <style>
+            body{
+                background-image: url('https://img4.goodfon.com/wallpaper/nbig/8/b4/noutbuk-telefon-naushniki-kofe-tsvetok-tekhnika.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+          
+            li a {
+  color: white;
+  text-decoration: none;
+}
 
+.nav{
+    display:flex;
+    float:left;
+}
+
+.nav li{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-user{
+    float:right;
+    text-decoration: none;
+}
+
+.nav-user li{
+    text-decoration: none;
+}
+li a:hover{
+    color:black;
+}
+/* Change the link color to #111 (black) on hover */
+
+h1{
+    color:green;
+    font-weight: bolder;
+    text-align: center;
+    padding:30px;
+    font-family: 'Kaushan Script', cursive;
+    text-shadow: 5px 3px white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    font-size: 70px;
+}
+
+
+.well-lg{
+    display:inline-flex;
+    padding-left:270px;
+    padding-top: 50px;
+    
+}
+
+.btn{
+    background-color: green;
+}
+.card{
+    text-align: center;
+    padding:20px;
+}
+ #kadi{
+    width:50rem;
+} 
+
+.navbar-collapse{
+    background-color:#0c0b0b59;
+}
+
+.overlay{
+    margin-top:0;
+    padding:150px;
+    background-color:#0c0c0cb8;
+}
+
+.sign{
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.nav-user{
+    font-weight: bolder;
+    font-size: 15px;
+    text-decoration: none;
+}
+.nav-user li a{
+    text-decoration: none;
+}
+
+.graph{
+    color:white;
+    padding:10px;
+    font-weight: bolder;
+}
+
+.overlay-2{
+    width:1000px;
+    margin-left:80px;
+    height:500px;
+    background-color:#0c0c0cb8;
+    padding-left: 50px;
+    padding-top:100px;  
+}
+.overlay-1{
+    width:1000px;
+    margin-left:80px;
+    height:500px;
+    background-color:#0c0c0cb8;
+    padding-left: 50px;
+
+}
+label{
+    color :white;
+}
+
+input{
+    padding:50px;
+}
+.container-2{
+    padding-top:10px;
+}
+.container-1{
+    padding-top:90px;
+}
+.nav-user li a:hover{
+    color:black;
+    text-decoration: none;
+}
+    </style>
         {% endblock %}
         <!-- Content block -->
 
@@ -26,6 +152,4 @@
         {% endblock %}
 
         {% endblock%}
-
-    </body>
-</html> 
+<

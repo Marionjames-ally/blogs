@@ -1,27 +1,18 @@
 {% extends 'base.html' %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
+
     {% block content %}
-    <h1> GENERAL QUOTES BLOG </h1>
+    <div class="overlay">
+    <h1>QUOTES BLOG </h1>
 
     <div class="well-lg" id="random">
-            <h2>Random Quote</h2> <br>
-            <p>quote ID: {{quote.id}}</p> 
-            <p>{{quote.quote}}</p>
-            <p>Author: {{quote.author}}</p> 
-            <p>{{quote.permalink}}</p> 
-
+        <div class="card" id="kadi">
+            <div class="card-body">
+                <h5 class="card-title">Author: {{quote.author}}</h5>
+                <p class="card-text">{{quote.quote}}</p>
+                <a href="{{quote.permalink}}" class="btn btn-success">MORE DETAILS</a>
+            </div>
         </div>
+    </div>
+</div>
 
     {% endblock %}
-</body>
-</html>

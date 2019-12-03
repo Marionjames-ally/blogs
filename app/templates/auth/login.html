@@ -2,7 +2,8 @@
 {% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
-<div class="container">
+<div class="overlay-1">
+<div class="container-1">
   <div class="row">
     <div class="col-md-2"> </div>
     <div class="col-md-8">
@@ -15,10 +16,11 @@
       {% endfor %}
       <!-- Login form -->
       {{wtf.quick_form(login_form)}}
-      <p> Don't have an account? <a href="{{url_for('auth.register')}}">Sign up here</a></p>
+      <p class="graph"> Don't have an account? <a href="{{url_for('auth.register')}}" >Sign up here</a></p>
     </div>
     <div clas="col-md-2"> </div>
   </div>
+</div>
 </div>
 
 {% endblock%}
