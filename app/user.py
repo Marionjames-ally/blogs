@@ -64,6 +64,10 @@ class Blog(db.Model):
         blogs = Blog.query.order_by(blog_id=id).desc().all()
         return blogs
 
+    def save_blog(self):
+        db.session.add(self)
+        db.session.commit()
+
     def delete_blog(self):
         db.session.delete(self)
         db.session.commit()
