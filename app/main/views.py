@@ -44,7 +44,14 @@ def blogs():
 
     return render_template('new_blog.html',  blog_form=blog_form)
 
-
+@main.route("/post/<int:post_id>")
+@login_required
+def mypost(post_id):
+    comments = Comment.query.filter_by(post_id=post_id).all()
+    print(comments)
+    heading = 'comments'
+    blog = blog.query.get_or_404(post_id)
+    return render_template('posts.html', title=blog.title, blog=blog, comments=comments, heading=heading)
 
 @main.route('/delete/blog,<int:id>', methods=['GET', 'POST'])
 @login_required
